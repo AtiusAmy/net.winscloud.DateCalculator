@@ -1,4 +1,4 @@
-app-id: io.github.ferraridamiano.ConverterNOW
+app-id: net.winscloud.DateCalculator
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
@@ -7,7 +7,6 @@ separate-locales: false
 finish-args:
   - --socket=fallback-x11
   - --socket=wayland
-  - --share=network
   - --share=ipc
   - --device=dri
 cleanup:
@@ -21,16 +20,15 @@ modules:
       - chmod +x /app/dateapp/dateapp
       - mkdir -p /app/bin
       - ln -s /app/dateapp/dateapp /app/bin/dateapp
-      - mv git_repo/snap/gui/dateapp.desktop ${FLATPAK_ID}.desktop
-      - desktop-file-edit ${FLATPAK_ID}.desktop --set-icon=${FLATPAK_ID}
+      - mv git_repo/linux/${FLATPAK_ID}.desktop ${FLATPAK_ID}.desktop
       - install -Dm644 -t "${FLATPAK_DEST}/share/applications/" ${FLATPAK_ID}.desktop
-      - install -Dm644 git_repo/snap/gui/icon.svg "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg"
+      - install -Dm644 git_repo/sassets/app_icons/${FLATPAK_ID}.svg "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg"
       - install -Dm644 git_repo/linux/${FLATPAK_ID}.appdata.xml /app/share/appdata/${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
         dest: dateapp
-        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.3/dateapp-linux-x64.tar.gz
-        sha256: 6892c762c91bd87f0b33bb2b802cc5de4c1a3dad59f6017402c32002ba9d44f9
+        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.4/dateapp-linux-x64.tar.gz
+        sha256: bd67f608cf3750ad2f21ac9cea397a5ee0bed76bc4631dff7a092d397870b5ba
         x-checker-data:
           type: json
           url: https://api.github.com/repos/WinsDominoes/dateapp/releases/latest
@@ -41,8 +39,8 @@ modules:
       - type: git
         dest: git_repo
         url: https://github.com/WinsDominoes/dateapp
-        tag: v0.0.3
-        commit: 7e78ee7f6a55bf920153847766a539a1f8f5d172
+        tag: v0.0.4
+        commit: e9adc506e9d39848903a63c1210f1d1ea0bb23b5
         x-checker-data:
           type: git
           tag-pattern": ^v([0-9.]+)$
