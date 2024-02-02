@@ -42,7 +42,7 @@ modules:
         only_arches:
           - aarch64
         dest: dateapp
-        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.5/dateapp-linux_arm64.tar.gz
+        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.5/dateapp-linux-arm64.tar.gz
         sha256: 0ff203b381a3ddcfcc1a3368a6fbdeb9d7c09d48bf200ed3518ed32d84d4072c
         x-checker-data:
           type: json
@@ -50,7 +50,7 @@ modules:
           tag-query: .tag_name
           timestamp-query: .published_at
           version-query: $tag | sub("^[vV]"; "")
-          url-query: '"https://github.com/WinsDominoes/dateapp/releases/download/\($tag)/dateapp-linux_arm64.tar.gz"'
+          url-query: '"https://github.com/WinsDominoes/dateapp/releases/download/\($tag)/dateapp-linux-arm64.tar.gz"'
       - type: git
         dest: git_repo
         url: https://github.com/WinsDominoes/dateapp
