@@ -15,8 +15,6 @@ cleanup:
 modules:
   - name: dateapp
     buildsystem: simple
-    only_arches:
-      - x86_64
     build-commands:
       - cp -r dateapp /app/
       - chmod +x /app/dateapp/dateapp
