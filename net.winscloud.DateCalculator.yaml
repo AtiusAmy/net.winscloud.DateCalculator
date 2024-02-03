@@ -29,8 +29,8 @@ modules:
         only_arches:
           - x86_64
         dest: dateapp
-        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.5/dateapp-linux-x64.tar.gz
-        sha256: 847d1b73c4b17e4c3f00fb8ac63e176fedaa24a2e84e647203e61e086d99b65e
+        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.6/dateapp-linux-x64.tar.gz
+        sha256: 5634355aeb3d4477f4281ef300d030a21551e3c384500d7a1de5f756bd564f6f
         x-checker-data:
           type: json
           url: https://api.github.com/repos/WinsDominoes/dateapp/releases/latest
@@ -42,8 +42,8 @@ modules:
         only_arches:
           - aarch64
         dest: dateapp
-        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.5/dateapp-linux-arm64.tar.gz
-        sha256: 20d9f9d5b56df706b4c2ce950a5e019a9f53d378790069b172827029584663da
+        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.6/dateapp-linux-arm64.tar.gz
+        sha256: 4270b90973b694c2d73d1777a567a6b3029ec2db49d42056e126ba4c10d74948
         x-checker-data:
           type: json
           url: https://api.github.com/repos/WinsDominoes/dateapp/releases/latest
@@ -54,8 +54,8 @@ modules:
       - type: git
         dest: git_repo
         url: https://github.com/WinsDominoes/dateapp
-        tag: v0.0.5
-        commit: 06eb11bc7ee91cfe49e903e3cc7b9b42339c514c
+        tag: v0.0.6
+        commit: c889d9dc45fceee36bdb931edf4eb0a5e15c61a1
         x-checker-data:
           type: git
           tag-pattern": ^v([0-9.]+)$
