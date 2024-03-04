@@ -22,15 +22,15 @@ modules:
       - ln -s /app/dateapp/dateapp /app/bin/dateapp
       - mv git_repo/linux/${FLATPAK_ID}.desktop ${FLATPAK_ID}.desktop
       - install -Dm644 -t "${FLATPAK_DEST}/share/applications/" ${FLATPAK_ID}.desktop
-      - install -Dm644 git_repo/assets/app_icons/${FLATPAK_ID}.svg "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg"
+      - install -Dm644 git_repo/assets/app_icons/net.winscloud.Datecalculator.svg "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg"
       - install -Dm644 git_repo/linux/${FLATPAK_ID}.appdata.xml /app/share/appdata/${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
         only_arches:
           - x86_64
         dest: dateapp
-        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.6/dateapp-linux-x64.tar.gz
-        sha256: 5634355aeb3d4477f4281ef300d030a21551e3c384500d7a1de5f756bd564f6f
+        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.7/dateapp-linux-x64.tar.gz
+        sha256: 37d10dd47aee012e3da5113cd8f05a634e2e38cd2be538a0b6b356d68aa95c95
         x-checker-data:
           type: json
           url: https://api.github.com/repos/WinsDominoes/dateapp/releases/latest
@@ -42,8 +42,8 @@ modules:
         only_arches:
           - aarch64
         dest: dateapp
-        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.6/dateapp-linux-arm64.tar.gz
-        sha256: 4270b90973b694c2d73d1777a567a6b3029ec2db49d42056e126ba4c10d74948
+        url: https://github.com/WinsDominoes/dateapp/releases/download/v0.0.7/dateapp-linux-arm64.tar.gz
+        sha256: 1938db3ef462db81e45537b098fd4ce9fa2967e1dec0f21e7abb1d9fb8616568
         x-checker-data:
           type: json
           url: https://api.github.com/repos/WinsDominoes/dateapp/releases/latest
@@ -53,9 +53,9 @@ modules:
           url-query: '"https://github.com/WinsDominoes/dateapp/releases/download/\($tag)/dateapp-linux-arm64.tar.gz"'
       - type: git
         dest: git_repo
-        url: https://github.com/WinsDominoes/dateapp
-        tag: v0.0.6
-        commit: c889d9dc45fceee36bdb931edf4eb0a5e15c61a1
+        url: https://git.winscloud.net/winsdominoes/dateapp
+        tag: v0.0.7
+        commit: 862194a6724d5c20ead274ef6ce2d46ce3fa5f4d
         x-checker-data:
           type: git
           tag-pattern": ^v([0-9.]+)$
